@@ -1,10 +1,23 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: #e4e2e2;
+}
+
+
 // ================= NAVBAR  START =================
 
 .navbar {
-    z-index: 100;
+
+    z-index: 100 !important;
+
     // Logo
-    .navbar-brand{
-        .logo-img{
+    .navbar-brand {
+        .logo-img {
             height: 70px;
             margin-left: 100px;
         }
@@ -45,7 +58,7 @@
                 margin: 1px 0;
                 left: 0;
                 background-color: #ffffff;
-                content:"";
+                content: "";
                 position: absolute;
                 height: 27px;
                 width: 4px;
@@ -63,12 +76,12 @@
                 transform: scaleY(1);
             }
 
-            a:hover{
+            a:hover {
                 background: #302f2f;
             }
         }
 
-        .dropdown:hover>.dropdown-menu{
+        .dropdown:hover>.dropdown-menu {
             display: block;
         }
 
@@ -108,6 +121,22 @@
     }
 }
 
+// Sticky Navigation
+.sticky {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 100;
+    background: #262626ec;
+    padding: 10px 0;
+    box-shadow: 0px 5px 8px 0px rgba(0, 0, 0, 0.47);
+
+    .logo-img {
+        display: none;
+    }
+}
+
 // ========X========= NAVBAR  END ===========X======
 
 // ================= SLIDER  START =================
@@ -121,18 +150,14 @@
         min-height: 300px;
         background: no-repeat center center scroll;
 
-        img{
-            height: 100vh;
-        }
-
         // black color on image
-        .black-overlay{
+        .black-overlay {
             position: absolute;
             top: 0px;
             left: 0px;
             height: 100%;
             width: 100%;
-            background: rgba(0,0,0,0.3);
+            background: rgba(0, 0, 0, 0.5);
         }
 
         // Style captions
@@ -146,7 +171,7 @@
                 margin-top: 25px;
             }
 
-            h1{
+            h1 {
                 position: relative;
                 width: fit-content;
                 font-size: 75px;
@@ -158,7 +183,7 @@
                 animation-delay: 1.5s;
 
                 // animation creating using span tag
-                span{
+                span {
                     position: absolute;
                     top: 0;
                     left: 0;
@@ -169,8 +194,8 @@
                     animation-delay: 1s;
                 }
             }
-            
-            h5{
+
+            h5 {
                 font-size: 30px;
             }
 
@@ -190,32 +215,251 @@
 
 // =========X======== SLIDER  END ==========X=======
 
+// ================= CARD SECTION  START =================
+
+#card-section {
+
+    .card {
+        position: relative;
+        cursor: pointer;
+        background: transparent;
+        border: none;
+        margin-top: -50px;
+
+
+        .face {
+            background: #131313;
+            transition: 0.5s;
+            border-radius: 5px;
+        }
+
+        .face1 {
+            position: relative;
+            display: flex;
+            justify-content: center;
+            z-index: 1;
+            transform: translateY(81px);
+            box-shadow: 0px 10px 11px 0px rgba(121, 110, 110, 0.75);
+
+            .content {
+                transition: 0.8s;
+
+                i {
+                    font-size: 75px;
+                    margin: 25px 0 0;
+                    // color: #81c784;
+                    color: #F7941D;
+                }
+
+                .de-icon {
+                    margin-left: 57px !important;
+                }
+
+                h3 {
+                    margin: 30px 0;
+                    padding: 0;
+                    color: #fff;
+                    text-align: center;
+                    font-size: 18px;
+                    font-weight: 900;
+                    text-transform: uppercase;
+                }
+            }
+        }
+
+        .face2 {
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            box-sizing: border-box;
+            transform: translateY(-100px);
+
+            .content {
+                p {
+                    margin: -24px 0 5px;
+                    width: 200px;
+                    padding: 0;
+                    font-size: 14px;
+                    text-align: center;
+                    font-weight: bold;
+                    color: #F7941D;
+                }
+
+                a {
+                    margin: 15px 0 0;
+                    display: inline-block;
+                    text-decoration: none;
+                    font-weight: 900;
+                    color: #333;
+                    padding: 3px;
+                    border: 2px solid #333;
+                }
+
+                a:hover {
+                    background: #333;
+                    color: #fff;
+                }
+            }
+        }
+
+
+    }
+
+    .card:hover {
+        .face1 {
+            transform: translateY(0px);
+            border-radius: 0px;
+            border-top-left-radius: 5px;
+            border-top-right-radius: 5px;
+            box-shadow: none;
+        }
+
+        .face2 {
+            transform: translateY(0);
+            border-radius: 0px;
+            border-bottom-left-radius: 5px;
+            border-bottom-right-radius: 5px;
+            box-shadow: 0px 10px 11px 0px rgba(0, 0, 0, 0.75);
+        }
+    }
+}
+
+// =========X======== CARD SECTIONT  END ==========X=======
 
 
 
+// =============== DESCRIPTION SECTION  START =============
+
+#description-section {
+
+    .row {
+        margin-bottom: 36px;
+
+        .description {
+            background: #131313;
+            color: #ffffff;
+            padding-left: 50px;
+
+            h2 {
+                margin-top: 21%;
+                font-size: 32px;
+            }
+
+            p {
+                padding-top: 23px;
+                width: 90%;
+                font-size: 14px;
+            }
+        }
+
+        .jarallax {
+            position: relative;
+            z-index: 10;
+            width: 570px;
+            height: 377.141px;
+
+        }
+
+        .jarallax>.jarallax-img {
+            position: absolute;
+            object-fit: cover;
+            font-family: 'object-fit: cover;';
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 9;
+        }
+    }
+
+    .shadow-box {
+        box-shadow: 0 10px 6px -6px #777;
+        position: relative;
+    }
+
+    .shadow-box:before,
+    .shadow-box:after {
+        z-index: -1;
+        position: absolute;
+        content: "";
+        bottom: 25px;
+        left: 10px;
+        width: 50%;
+        top: 80%;
+        max-width: 300px;
+        background: #777;
+        -webkit-box-shadow: 0 35px 20px #777;
+        -moz-box-shadow: 0 35px 20px #777;
+        box-shadow: 0 35px 20px #777;
+        -webkit-transform: rotate(-8deg);
+        -moz-transform: rotate(-8deg);
+        -o-transform: rotate(-8deg);
+        -ms-transform: rotate(-8deg);
+        transform: rotate(-8deg);
+    }
+
+    .shadow-box:after {
+        -webkit-transform: rotate(8deg);
+        -moz-transform: rotate(8deg);
+        -o-transform: rotate(8deg);
+        -ms-transform: rotate(8deg);
+        transform: rotate(8deg);
+        right: 10px;
+        left: auto;
+    }
+
+}
 
 
+
+// =======X======= DESCRIPTION SECTION  END  ====X=======
+
+// =============== SHOWCASE-section SECTION  START =============
+
+#showcase-section {
+
+    margin:10px 15px 0px 10px;
+    .main-carousel {
+        height: 100%;
+
+        .carousel-cell {
+            width: 40%;
+            height: 400px;
+            margin-right: 10px;
+            background: #8C8;
+            border-radius: 5px;
+        }
+
+        .flickity-page-dots { display: none; }
+
+    }
+}
+
+// =======X======= SHOWCASE-section SECTION  END  ====X=======
 
 
 // ================= Keyframes Start =================
 
 // Carousel caption text animation Start  ---------------
-@keyframes text_reveal_box{
-    50%{
+@keyframes text_reveal_box {
+    50% {
         width: 100%;
         left: 0;
     }
-    100%{
+
+    100% {
         width: 0%;
         left: 100%;
     }
 }
 
-@keyframes text_reveal{
+@keyframes text_reveal {
 
-   100%{
-       color: #ffffff;
-   }
+    100% {
+        color: #ffffff;
+    }
 }
 
 // Carousel caption text animation End  ---------------
