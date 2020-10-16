@@ -420,16 +420,20 @@ body {
 
 #showcase-section {
 
-    margin:10px 15px 0px 10px;
+    margin:10px 15px 10px 0px;
     .main-carousel {
         height: 100%;
 
         .carousel-cell {
             width: 40%;
             height: 400px;
-            margin-right: 10px;
+            margin-right: 0 !important;
             background: #8C8;
             border-radius: 5px;
+            img{
+                height: 350px;
+                width: 100%;
+            }
         }
 
         .flickity-page-dots { display: none; }
