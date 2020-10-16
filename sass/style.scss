@@ -5,9 +5,9 @@
 }
 
 body {
-    background: #e4e2e2;
+    // background: #e4e2e2;
+    background: #323233;
 }
-
 
 // ================= NAVBAR  START =================
 
@@ -239,7 +239,7 @@ body {
             justify-content: center;
             z-index: 1;
             transform: translateY(81px);
-            box-shadow: 0px 10px 11px 0px rgba(121, 110, 110, 0.75);
+            box-shadow: 0px 10px 11px 0px rgba(0, 0, 0, 0.75);
 
             .content {
                 transition: 0.8s;
@@ -375,7 +375,8 @@ body {
     }
 
     .shadow-box {
-        box-shadow: 0 10px 6px -6px #777;
+        box-shadow: 0 10px 6px -6px rgba(0, 0, 0, 0.75);
+        ;
         position: relative;
     }
 
@@ -389,10 +390,11 @@ body {
         width: 50%;
         top: 80%;
         max-width: 300px;
-        background: #777;
-        -webkit-box-shadow: 0 35px 20px #777;
-        -moz-box-shadow: 0 35px 20px #777;
-        box-shadow: 0 35px 20px #777;
+        background: #000;
+        -webkit-box-shadow: 0 35px 20px rgba(0, 0, 0, 0.75);
+        -moz-box-shadow: 0 35px 20px rgba(0, 0, 0, 0.75);
+        box-shadow: 0 35px 20px rgba(0, 0, 0, 0.75);
+        ;
         -webkit-transform: rotate(-8deg);
         -moz-transform: rotate(-8deg);
         -o-transform: rotate(-8deg);
@@ -420,28 +422,258 @@ body {
 
 #showcase-section {
 
-    margin:10px 15px 10px 0px;
+    margin: 10px 15px 50px 0px;
+
+    // SHOWCASE CAROUSEL START
     .main-carousel {
         height: 100%;
 
         .carousel-cell {
-            width: 40%;
+            width: 25%;
             height: 400px;
-            margin-right: 0 !important;
-            background: #8C8;
-            border-radius: 5px;
-            img{
-                height: 350px;
+            overflow: hidden;
+            background: #8b8b8b;
+
+            // IMAGE ZOOM
+
+            .parent {
                 width: 100%;
+                height: 350px;
+                overflow: hidden;
+                position: relative;
+                display: inline-block;
+
+                .child {
+                    height: 100%;
+                    width: 100%;
+                    background-size: cover;
+                    background-repeat: no-repeat;
+                    -webkit-transition: all .5s;
+                    -moz-transition: all .5s;
+                    -o-transition: all .5s;
+                    transition: all .5s;
+                }
+
+                .bg-one {
+                    background-image: url(../images/box_img_1.jpg);
+                }
+
+                .bg-two {
+                    background-image: url(../images/box_img_2.jpg);
+                }
+
+                .bg-three {
+                    background-image: url(../images/box_img_3.jpg);
+                }
+
+                .bg-four {
+                    background-image: url(../images/box_img_4.jpg);
+                }
+
+                .bg-five {
+                    background-image: url(../images/box_img_1.jpg);
+                }
+
+                .bg-six {
+                    background-image: url(../images/box_img_2.jpg);
+                }
+
+                .bg-seven {
+                    background-image: url(../images/box_img_3.jpg);
+                }
+
+                .img-info {
+                    display: none;
+                    font-size: 18px;
+                    color: #ffffff !important;
+                    text-align: center;
+                    margin: auto;
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    bottom: 0;
+                    right: 0;
+                    height: 80px;
+                }
+
+                .child:before {
+                    content: "";
+                    display: none;
+                    height: 100%;
+                    width: 100%;
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    background-color: rgba(52, 73, 94, 0.75);
+                }
+            }
+
+            .parent:hover,
+            .parent:focus {
+                .child {
+                    -ms-transform: scale(1.2);
+                    -moz-transform: scale(1.2);
+                    -webkit-transform: scale(1.2);
+                    -o-transform: scale(1.2);
+                    transform: scale(1.2);
+                }
+
+                .child:before {
+                    display: block;
+                }
+
+                .img-info {
+                    display: block;
+                }
+            }
+
+            // IMAGE ZOOM END
+
+            // BOTTOM IMAGE DISCTIPTION
+            .project-info{
+                margin-top: 5px;
+                font-size: 14px;
+                text-align: center;
+                font-weight: 400;
+                color: #ffffff;
+                text-transform: uppercase;
             }
         }
 
-        .flickity-page-dots { display: none; }
+        .flickity-page-dots {
+            display: none;
+        }
 
+    }
+
+    // SHOWCASE CAROUSEL END
+
+    // SHOWCASE BAR
+    .showcase-bar {
+        height: 400px;
+        margin: 0px;
+        border-top-left-radius: 0;
+        border-bottom-left-radius: 0;
+        justify-content: center;
+        background: #131313;
+
+        -webkit-box-shadow: -6px 0px 8px 0px rgba(19, 19, 19, 1);
+        -moz-box-shadow: -6px 0px 8px 0px rgba(19, 19, 19, 1);
+        box-shadow: -6px 0px 8px 0px rgba(19, 19, 19, 1);
+
+        p {
+            text-align: center;
+            font-size: 24px;
+            font-weight: bold;
+            color: #ffffff;
+        }
+
+        .showcase-btn {
+            background-color: #F7941D;
+            padding: 5px 0;
+            border-radius: 5px;
+            width: 120px;
+            border: none;
+            font-weight: 400;
+        }
+
+        .showcase-btn:active,
+        .showcase-btn:focus{
+            outline: none;
+        }
+        .showcase-btn:active{
+            -webkit-box-shadow: inset -5px -5px 7px 0px rgba(0, 0, 0, 0.75);
+            -moz-box-shadow: inset -5px -5px 7px 0px rgba(0, 0, 0, 0.75);
+            box-shadow: inset -4px -4px 5px 0px rgba(0, 0, 0, 0.75);
+        }
     }
 }
 
 // =======X======= SHOWCASE-section SECTION  END  ====X=======
+
+// Footer SECTION START  START =============
+
+#footer-section{
+    margin-bottom: 16px;
+
+    .footer-content{
+        h6{
+            color: #9dee1c;
+            font-size: 14px;
+            font-weight: 600;
+        }
+        a,p{
+            margin: 0;
+            display: block;
+            color: #ffffff;
+            font-size: 13px;
+            line-height: 25px;
+        }
+        i{
+            margin-right: 10px;
+            color: #9dee1c;
+        }
+        p:nth-child(5),p:nth-child(6){
+            margin-left: 19px;
+        }
+    }
+    
+    .social{
+        hr{
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        span{
+            color: #ffffff;
+            font-size: 14px;
+            font-weight: 600;
+            margin-right: 15px;
+        }
+        a:nth-child(3){
+            padding: 5px 9px;
+        }
+        a:nth-child(4){
+            padding: 6px 8px;
+        }
+        a:nth-child(5){
+            padding: 6px 7px;
+        }
+        a:nth-child(6){
+            padding: 7px 7px;
+        }
+        a:nth-child(7){
+            padding: 6px 8px;
+        }
+        a{
+            background: rgba(255, 255, 255, 0.1);
+            margin: 5px;
+            border-radius: 50%;
+
+            i{
+                font-size: 16px;
+                color: #ffffff;
+            }
+        }
+        a:hover{
+            background: rgba(255, 255, 255, 0.3); 
+        }
+    }
+
+    .copyright{
+        hr{
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        span{
+            color: #ffffff;
+            font-size: 14px;
+            text-align: center;
+            display: block;
+        }
+    }
+}
+
+
+
+// Footer SECTION START  END  ====X=======
 
 
 // ================= Keyframes Start =================
